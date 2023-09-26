@@ -104,7 +104,7 @@
       "runAfterFinish": false,
       "installerIcon": "logo.ico",
       "uninstallerIcon": "logo.ico",
-      "installerHeaderIcon": ".logo.ico"
+      "installerHeaderIcon": "logo.ico"
     }
   }
 
