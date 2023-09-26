@@ -84,6 +84,7 @@
       "dist-electron"
     ],
     "win": {
+      "icon": "logo.ico",
       "target": [
         {
           "target": "nsis",
@@ -92,7 +93,7 @@
           ]
         }
       ],
-      "artifactName": "${productName}_${version}.${ext}"
+      "artifactName": "${productName}_${version}_${arch}.${ext}"
     },
     "nsis": {
       "oneClick": false,
@@ -100,7 +101,10 @@
       "deleteAppDataOnUninstall": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "runAfterFinish": false
+      "runAfterFinish": false,
+      "installerIcon": "logo.ico",
+      "uninstallerIcon": "logo.ico",
+      "installerHeaderIcon": ".logo.ico"
     }
   }
 
