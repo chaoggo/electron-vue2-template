@@ -1,0 +1,107 @@
+{
+  "name": "electron-vue2-template",
+  "version": "1.0.0",
+  "author": {
+    "name": "Charles Liu"
+  },
+  "description": "electron-vue2-template electron开发模板",
+  "main": "dist-electron/electron.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && electron-builder",
+    "preview": "vite preview --port 4173",
+    "test:unit": "vitest --environment jsdom",
+    "lint:eslint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "lint:stylelint": "stylelint src/**/*.{vue,css,scss} --fix",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "element-ui": "^2.15.13",
+    "lodash-es": "^4.17.21",
+    "qs": "^6.11.2",
+    "vue": "^2.7.7",
+    "vue-i18n": "^8.28.2",
+    "vue-router": "^3.5.4",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^17.6.7",
+    "@rushstack/eslint-patch": "^1.1.0",
+    "@vitejs/plugin-legacy": "^2.0.0",
+    "@vitejs/plugin-vue2": "^1.1.2",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/test-utils": "^1.3.0",
+    "babel-plugin-component": "^1.1.1",
+    "commitizen": "^4.3.0",
+    "commitlint": "^17.6.7",
+    "conventional-changelog-cli": "^3.0.0",
+    "cz-customizable": "^7.0.0",
+    "electron": "^26.2.2",
+    "electron-builder": "^24.6.4",
+    "eslint": "^8.5.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "husky": "^8.0.3",
+    "jsdom": "^20.0.0",
+    "postcss": "^8.4.27",
+    "postcss-html": "^1.5.0",
+    "prettier": "^2.5.1",
+    "sass": "^1.64.1",
+    "stylelint": "^15.10.2",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recess-order": "^4.3.0",
+    "stylelint-config-recommended-scss": "^12.0.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "terser": "^5.14.2",
+    "vite": "^3.0.2",
+    "vite-plugin-electron": "^0.14.1",
+    "vitest": "^0.18.1",
+    "vue-template-compiler": "^2.7.7"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  },
+  "build": {
+    "appId": "com.chaoggo.desktop",
+    "productName": "桌面程序",
+    "asar": true,
+    "copyright": "Copyright © 2022 chaoggo",
+    "directories": {
+      "output": "release/"
+    },    
+    "files": [
+      "dist",
+      "dist-electron"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}_${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "runAfterFinish": false
+    }
+  }
+
+}

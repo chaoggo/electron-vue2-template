@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "vue.volar",
+    "Vue.vscode-typescript-vue-plugin",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "mrmlnc.vscode-less",
+    "voorjaar.windicss-intellisense",
+  ]
+}
